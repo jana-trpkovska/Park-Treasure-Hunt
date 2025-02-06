@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl3r2bajal0kl"]
+
+[ext_resource type="Script" path="res://game_over_screen.gd" id="1_fsn5o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2iws7"]
+bg_color = Color(0, 0.8, 0.172549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8583y"]
+bg_color = Color(0, 0.8, 0.172549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwi26"]
+bg_color = Color(1.0685e-05, 0.801168, 0.174003, 1)
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_fsn5o")
+
+[node name="Background" type="Panel" parent="."]
+self_modulate = Color(0, 0, 0, 0.5)
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="GameOverLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(100, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "Game Over"
+
+[node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_2iws7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8583y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xwi26")
+text = "Restart"
